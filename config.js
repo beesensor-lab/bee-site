@@ -9,8 +9,17 @@ const header=`
       <a href="#!" class="brand-logo">BEESENSOR</a>
 
       <a href="#" data-target="slide-out" class="sidenav-trigger show-on-larger"><i class="material-icons">menu</i></a>
-	
-			<ul class="sidenav fixed" id="slide-out">
+			
+			<ul class="right hide-on-med-and-down">
+				<li><a href="home">Home</a></li>
+				<li><a href="support">Suporte</a></li>
+				<li><a href="contact">Contatos</a></li>
+				<li><a href="payment">Pagamento</a></li>
+				<li><a href="">Sobre Projeto</a></li>
+				<li><a href="terms">Termos de uso</a></li>
+			</ul>
+
+			<ul class="sidenav" id="slide-out">
 				<li><a href="home"><i class="material-icons">home</i>Home</a></li>
 				<li><a href="support"><i class="material-icons">help</i>Suporte</a></li>
 				<li><a href="contact"><i class="material-icons">phone</i>Contatos</a></li>
