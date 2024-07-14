@@ -6,7 +6,7 @@ const head=`
 const header=`
 	<nav>
     <div class="nav-wrapper orange darken-2">
-      <a href="#!" class="brand-logo">BEESENSOR</a>
+      <a href="#!" class="brand-logo" style="margin-left: 10px">BEESENSOR</a>
 
       <a href="#" data-target="slide-out" class="sidenav-trigger show-on-larger"><i class="material-icons">menu</i></a>
 			

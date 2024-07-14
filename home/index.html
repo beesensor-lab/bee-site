@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BEESENSOR</title>
+	<meta name = "description" content = "Este é um exemplo da minha meta descrição.">
+
+<style>
+	.pie {
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		font-size: 2.5rem;
+		background: conic-gradient(#64dd17 40%, #ffab00 0 70%, #ff3d00 0); }
+	
+	.pie:after{
+		width: 64%;
+		height: 64%;
+		margin: 18%;
+		padding-top:25%;
+		background: #fff;
+		text-align: center;
+		position: relative;
+		border-radius: 50%;
+		content: attr(after);
+		display: inline-block;
+	}
+	.row{ grid-gap:20px;}
+	.col{ padding:20px; margin-top:20px;}
+</style>
+</head>
+<body>
+	<script src="../config.js"></script>
+
+	<div class="row" style="margin: 20px">	
+		<div class="col s4"><p class="pie" after="Temp"></p></div>
+		<div class="col s4"><p class="pie" after="Peso"></p></div>
+		<div class="col s4"><p class="pie" after="CO2"></p></div>
+	<div>
+
+	<script>
+
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
