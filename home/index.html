@@ -8,8 +8,7 @@
 	.pie {
 		aspect-ratio: 1/1;
 		border-radius: 50%;
-		font-size: 2.5rem;
-		background: conic-gradient(#64dd17 40%, #ffab00 0 70%, #ff3d00 0); }
+		font-size: 2.5rem; }
 	
 	.pie:after{
 		width: 64%;
@@ -18,11 +17,13 @@
 		padding-top:25%;
 		background: #fff;
 		text-align: center;
+		line-height: 64%;
 		position: relative;
 		border-radius: 50%;
 		content: attr(after);
 		display: inline-block;
 	}
+
 	.row{ grid-gap:20px;}
 	.col{ padding:20px; margin-top:20px;}
 </style>
@@ -31,14 +32,30 @@
 	<script src="../config.js"></script>
 
 	<div class="row" style="margin: 20px">	
-		<div class="col s4"><p class="pie" after="Temp"></p></div>
-		<div class="col s4"><p class="pie" after="Peso"></p></div>
-		<div class="col s4"><p class="pie" after="CO2"></p></div>
 	<div>
 
-	<script>
+<script>
+	let charts=[ 'Temp', 'Peso', 'CO2' ]
+	let data = [ 4,8,3,9,3,6 ]
+	 
+	setInterval(getData, 800) // REPEAT FUNCTION FOR EACH 5 SECONDS
 
-	</script>
+	for (chart of charts){
+		let append = `<div class="col s4"><p class="pie" id="${chart}" after="${chart}"></p></div>`
+		document.querySelector(".row").insertAdjacentHTML("beforeend", append);
+	}
+
+	function getData(){
+		for (i in data){
+			data[i] = Math.floor(Math.random()*11) // change data (for test only)
+		}
+
+		for (i in charts){
+			let style = `conic-gradient(#64dd17 ${data[2*i]*10}%, #ffab00 0 ${data[2*i+1]*10}%, #ff3d00 0)`
+			document.querySelector(`#${charts[i]}`).style.background = style;
+		}
+	}
+</script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
