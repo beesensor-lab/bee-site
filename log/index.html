@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BEESENSOR LOG</title>
+	<meta name = "description" content = "Pagina de log da BEESENSOR">
+</head>
+<body>
+	<script src="../config.js"></script>
+	
+	<table class="centered striped resposive-table">
+		<thead>
+			<tr id="farms">
+				<th>Fazenda</th>
+			</tr>
+		</thead>
+
+		<tbody>
+		</tbody>
+	</table>
+
+<script>
+	let sensor = [ 'Temp', 'Peso', 'CO2' ]
+	let farm = [ 'Fazenda 1', 'Fazenda 2', 'Fazenda 3' ]
+	let data = [ [0,2,3,3], [0,2,3,4], [0,2,3,4], [1,2,3,4], [1,2,3,4], [2,2,3,4] ]
+	
+	alert('ola mundo')
+
+	for (elem of sensor){
+		let append = `<th>${elem}</th>`
+		document.querySelector("table > thead > tr").insertAdjacentHTML("beforeend", append);
+	}
+
+	for (i in data){
+		let append = `<tr id="hive${i}"></tr>`
+		document.querySelector("table > tbody").insertAdjacentHTML("beforeend", append);
+
+		for (j in data[i]){
+			if (j==0){
+				let append = `<td>${farm[data[i][0]]}</td>`
+				document.querySelector(`#hive${i}`).insertAdjacentHTML("beforeend", append);
+			} else {
+				let append = `<td>${data[i][j]}</td>`
+				document.querySelector(`#hive${i}`).insertAdjacentHTML("beforeend", append);
+			}
+		}
+	}
+	
+	setInterval(getData, 800) // Repete funcao a cada 800 milisegundos
+
+	function getData(){
+		for (i of data) {
+			data[i][1] = Math.floor(27+Math.random()*5)
+			data[i][2] = Math.floor(4+Math.random()*3)
+			data[i][3] = Math.floor(22+Math.random()*5)
+		}
+	}
+</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
